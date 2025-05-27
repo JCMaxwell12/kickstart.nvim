@@ -1014,3 +1014,7 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Append empty lines with leader + o/O
+vim.keymap.set('n', '<leader>O', "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
+vim.keymap.set('n', '<leader>o', "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
